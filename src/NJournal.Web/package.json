@@ -1,0 +1,10 @@
+{
+    "name": "NJournal",
+    "description": "Next-gen vNext based blogging engine",
+    "repository": { "type": "github", "url": "" },
+    "version": "0.0.1",
+    "devDependencies": {
+        "gulp": "3.8.11",
+        "rimraf": "2.2.8"
+    }
+}
