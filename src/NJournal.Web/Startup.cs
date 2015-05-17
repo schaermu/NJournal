@@ -25,19 +25,11 @@ namespace NJournal.Web
         }
 
         public IConfiguration Configuration { get; set; }
-
-        // This method gets called by the runtime.
+        
         public void ConfigureServices(IServiceCollection services)
         {
             services.Configure<AppSettings>(Configuration.GetSubKey("AppSettings"));
-
-            // Add MVC services to the services container.
             services.AddMvc();
-
-            // Uncomment the following line to add Web API services which makes it easier to port Web API 2 controllers.
-            // You will also need to add the Microsoft.AspNet.Mvc.WebApiCompatShim package to the 'dependencies' section of project.json.
-            // services.AddWebApiConventions();
-
         }
 
         // Configure is called after ConfigureServices is called.
@@ -67,12 +59,7 @@ namespace NJournal.Web
             // Add MVC to the request pipeline.
             app.UseMvc(routes =>
             {
-                routes.MapRoute(
-                    name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
-
-                // Uncomment the following line to add a route for porting Web API 2 controllers.
-                // routes.MapWebApiRoute("DefaultApi", "api/{controller}/{id?}");
+                routes.MapRoute(name: "default", template: "{controller=Home}/{action=Index}/{id?}");
             });
         }
     }
